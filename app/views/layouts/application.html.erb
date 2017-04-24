@@ -8,6 +8,8 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Heebo:100,300" rel="stylesheet">
+
     <%= favicon_link_tag 'favicon.ico' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +17,9 @@
   </head>
 
   <body>
+    <p>
+        <%= link_to "Register", new_customer_path %>
+    </p>
     <%= yield %>
   </body>
 </html>
