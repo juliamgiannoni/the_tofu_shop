@@ -17,9 +17,17 @@
   </head>
 
   <body>
-    <h4>
-        <%= link_to "Register", new_customer_path %>
-    </h4>
+    <p>
+        <% if current_user %>
+            Welcome, <%= current_user.customer_name %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to "Log Out", session_path('dummy'), method: :delete %>
+        <% else %>
+            <%= link_to "Register", new_customer_path %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to "Login", '/login' %>
+        <% end %>
+    </p>
     <%= yield %>
   </body>
 </html>

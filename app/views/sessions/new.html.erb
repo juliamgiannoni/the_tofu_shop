@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <h4>Login To Your Account</h4>
+
+    <p id="alert"><%= alert %></p>
+    <%= form_tag sessions_path do %>
+      <div class="field">
+        <%= label_tag "Email Address" %><br>
+        <%= text_field_tag :customer_email, params[:customer_email] %><br><br>
+      </div>
+      <div class="field">
+        <%= label_tag "Password" %><br>
+        <%= password_field_tag :password %><br><br>
+      </div>
+      <div class="actions"><%= submit_tag "Log In" %></div>
+    <% end %>
+</div>

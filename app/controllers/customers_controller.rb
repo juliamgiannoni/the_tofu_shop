@@ -7,7 +7,6 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save
       flash[:notice] = "You've successfully created an account."
-      redirect_to root_path
     else
       render :new
     end
