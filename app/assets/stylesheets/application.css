@@ -4,13 +4,14 @@
 }
 
 body {
-    padding-top: 65px;
+    padding-top: 50px;
 }
 
 .navbar {
   background-color: #FFFFFF;
   border-color: #E7E7E7;
 }
+
 .navbar-brand {
     position: absolute;
     left: 44%;
@@ -22,6 +23,12 @@ a {
   text-decoration: none;
 }
 
-.d-inline-block {
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-nav > li {
+  float: none;
   display: inline-block;
 }
