@@ -17,17 +17,37 @@
   </head>
 
   <body>
-    <p>
-        <% if current_customer %>
-            Welcome, <%= current_customer.customer_name %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to "Log Out", session_path('dummy'), method: :delete %>
-        <% else %>
-            <%= link_to "Register", new_customer_path %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to "Login", '/login' %>
-        <% end %>
-    </p>
-    <%= yield %>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header collapse navbar-collapse navbar-right">
+          <a class="navbar-brand" href="/">The Tofu Shop</a>
+          <a href="/customers/new" >
+              <p class="navbar-text collapse navbar-collapse">
+                <% if current_customer %>
+                    Welcome, <%= current_customer.customer_name %>
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <%= link_to "Log Out", session_path("dummy"), method: :delete %>
+                <% else %>
+                    <%= link_to "Register", register_path %>
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <%= link_to "Login", "/login" %>
+                <% end %>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <%= link_to "Cart", "#" %>
+            </p>
+          </a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <%= yield %>
+        </div>
+    </div>
   </body>
 </html>

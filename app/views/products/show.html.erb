@@ -1,0 +1,13 @@
+<div class="d-inline-block col-md-6 text-right">
+    <%= image_tag @product.product_image, {height: 500} %><br>
+</div>
+<div class="d-inline-block col-md-6">
+        <%= "Category Name" %><br><br>
+        <%= @product.product_name %><br>
+        $<%= @product.product_price %><br><br>
+        <%= "Description:" %><br>
+        <%= @product.product_description %><br><br><br>
+        <%= "Add To Cart Button" %>
+    </div>
+</div>
+

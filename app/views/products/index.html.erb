@@ -1,1 +1,8 @@
-ALL PRODUCTS LIVE HERE
+<% @products.each do |product| %>
+    <div class="d-inline-block col-md-4 text-center">
+        <%= link_to (image_tag product.product_image, {height: 300}), product_path(product) %><br>
+        <%= link_to product.product_name, product_path(product) %><br>
+        $<%= product.product_price %><br><br>
+    </div>
+<% end %>
+
