@@ -1,6 +1,5 @@
 * {
   font-family: 'Heebo', sans-serif;
-  text-transform: uppercase;
 }
 
 body {
@@ -39,4 +38,13 @@ a:hover {
 .navbar-nav > li {
   float: none;
   display: inline-block;
+}
+
+.product-page {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.category-name, .product-name, .field {
+  text-transform: uppercase;
 }

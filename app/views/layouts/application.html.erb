@@ -23,20 +23,20 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-toggler-right"> <!-- top nav bar -->
     <div class="container-fluid">
       <div class="navbar-header collapse navbar-collapse navbar-right">
-          <a class="navbar-brand" href="/">The Tofu Shop</a>
+          <a class="navbar-brand" href="/">THE TOFU SHOP</a>
           <a href="/customers/new" >
               <p class="navbar-text collapse navbar-collapse">
                 <% if current_customer %>
                     Welcome, <%= current_customer.customer_name %>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <%= link_to "Log Out", session_path("dummy"), method: :delete %>
+                    <%= link_to "LOGOUT", session_path("dummy"), method: :delete %>
                 <% else %>
-                    <%= link_to "Register", register_path %>
+                    <%= link_to "REGISTER", register_path %>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <%= link_to "Login", "/login" %>
+                    <%= link_to "LOGIN", "/login" %>
                 <% end %>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <%= link_to "Cart (0)", "#" %>
+                <%= link_to "CART (0)", "#" %>
             </p>
           </a>
       </div>
@@ -47,12 +47,12 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-              <li><a href="/">Accessories</a></li>&nbsp;&nbsp;
-              <li><a href="/">Bed</a></li>&nbsp;&nbsp;
-              <li><a href="/">Clothing</a></li>&nbsp;&nbsp;
-              <li><a href="/">Home</a></li>&nbsp;&nbsp;
-              <li><a href="/">Miscellaneous</a></li>&nbsp;&nbsp;
-              <li><a href="/">Toys</a></li>
+              <li><a href="/">ACCESSORIES</a></li>&nbsp;&nbsp;
+              <li><a href="/">BEDS</a></li>&nbsp;&nbsp;
+              <li><a href="/">CLOTHING</a></li>&nbsp;&nbsp;
+              <li><a href="/">HOME</a></li>&nbsp;&nbsp;
+              <li><a href="/">MISCELLANEOUS</a></li>&nbsp;&nbsp;
+              <li><a href="/">TOYS</a></li>
         </ul>
       </div>
     </div>
