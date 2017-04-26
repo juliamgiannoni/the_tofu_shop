@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize
-      redirect_to login_path, alert: "Please login to complete your purchase." if current_customer.nil?
+      redirect_to login_path, alert: "Please login to begin adding items to your cart." if current_customer.nil?
     end
 
 end

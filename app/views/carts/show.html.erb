@@ -12,7 +12,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <% @products.each do |product| %>
+                    <% @current_customer.cart.products.each do |product| %>
                         <td>
                             <div class="d-inline-block col-md-4 table-data">
                                 <%= link_to (image_tag product.product_image, {height: 110}), product_path(product) %>
@@ -30,13 +30,14 @@
             <thead>
                 <tr>
                     <td class="col-md-5"></td>
-                    <td class="col-md-3"></td>
-                    <td class="col-md-1">SUBTOTAL<br><br>GRANDTOTAL</td>
-                    <td class="col-md-3 text-right">PRODUCT PRICES SUM<br><br>CART TOTAL</td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2">GRAND TOTAL</td>
+                    <td class="col-md-3 text-right">CART TOTAL</td>
                 </tr>
             </thead>
-
             </tbody>
         </table>
+        <div class="actions text-right"><%= submit_tag "CHECKOUT", class: "button" %></div>
+
 </div>
 

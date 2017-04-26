@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     customer = Customer.find_by(customer_email: params[:customer_email])
     if customer && customer.authenticate(params[:password])
       session[:customer_id] = customer.id
-      redirect_to root_path, notice: 'Logged in!'
+      redirect_to root_path
     else
       flash.now.alert = "Invalid login. Try again."
       render :new
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:customer_id] = nil
-    redirect_to root_path, notice: "Logged out."
+    redirect_to root_path
   end
 end
 

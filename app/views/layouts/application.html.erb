@@ -34,7 +34,10 @@
                                 <%= link_to "LOGIN", "/login" %>
                             <% end %>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <%= link_to "CART (0)", "/shoppingcart" %>
+                            <% if current_customer %>
+                                <%= link_to "CART (#{current_customer.cart.products.count})", "/login" %>
+                            <% end %>
+
                         </p>
                 </div>
             </div>
@@ -59,12 +62,14 @@
             </div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <footer class="footer">
+                <%= link_to image_tag("tofu_background.png"), "http://www.instagram.com/tofu_corgi", target: :_blank %>
+        </footer>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
         <script src="js/bootstrap.min.js"></script>
-    <footer class="footer">
-            <%= link_to image_tag("tofu_background.png"), "http://www.instagram.com/tofu_corgi", target: :_blank %>
-    </footer>
+
     </body>
 
 </html>
