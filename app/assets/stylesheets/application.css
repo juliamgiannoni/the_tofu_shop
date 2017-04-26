@@ -1,5 +1,6 @@
 * {
   font-family: 'Heebo', sans-serif;
+  color: #5e5e5e;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   position: absolute;
   left: 44%;
   font-size: 25px;
+  line-height: 25px;
 }
 
 a {
@@ -22,12 +24,12 @@ a {
 }
 
 a:hover {
-  color: #5e5e5e;;
+  color: #ffcc66;;
+  text-decoration: none;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  color: #5e5e5e;;
-  text-decoration: underline;
+  color: #ffcc66;;
 }
 
 .navbar-nav {
@@ -63,5 +65,14 @@ a:hover {
 }
 
 .button {
-  width: 155px;
+  width: 154px;
+  color: white;
+  background-color: #5e5e5e;
+  border: solid 1px;
+  padding: 10px;
+}
+
+.button:hover {
+  background-color: white;
+  color: #ffcc66;
 }
