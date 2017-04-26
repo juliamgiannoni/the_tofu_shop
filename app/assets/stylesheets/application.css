@@ -49,3 +49,13 @@ a:hover {
 .category-name, .product-name, .field {
   text-transform: uppercase;
 }
+
+.table-data {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  }
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
