@@ -2,14 +2,15 @@
     <%= image_tag @product.product_image, {height: 500} %><br>
 </div>
 <div class="d-inline-block col-md-6">
-        <span class="category-name"><%= @product.category.category_name %></span><br><br>
-        <span class="product-page">
-            <%= @product.product_name %><br>
-            $<%= @product.product_price %><br><br>
-            <%= "Description:" %><br>
-        </span>
+    <span class="category-name">
+        <%= @product.category.category_name %>
+    </span><br><br>
+    <span class="product-page">
+        <%= @product.product_name %><br>
+        $<%= @product.product_price %><br><br>
+        <%= "Description:" %><br>
+    </span>
         <%= @product.product_description %><br><br><br>
-        <%= "Add To Cart Button" %>
-    </div>
+    <div class="actions"><%= submit_tag "ADD TO CART", class: "button" %></div>
 </div>
 

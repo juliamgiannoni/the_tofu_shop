@@ -61,3 +61,7 @@ a:hover {
   vertical-align: middle;
   text-transform: uppercase;
 }
+
+.button {
+  width: 155px;
+}

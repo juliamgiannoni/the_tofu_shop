@@ -3,11 +3,11 @@
         <hr>
         <table class="table">
             <thead>
-                <tr>
-                    <th class="col-md-4">ITEM</th>
+                <tr class="table-header">
+                    <th class="col-md-5">ITEM</th>
                     <th class="col-md-3">EDIT</th>
                     <th class="col-md-1">QUANTITY</th>
-                    <th class="col-md-4 text-right">SUBTOTAL</th>
+                    <th class="col-md-3 text-right">SUBTOTAL</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,17 +22,17 @@
                                 $<%= product.product_price %>
                             </div>
                         </td>
-                        <td>remove</td>
-                        <td>2</td>
-                        <td class="text-right">$10</td>
+                        <td><%= link_to "REMOVE", "#" %></td>
+                        <td>1</td>
+                        <td class="text-right">$<%= product.product_price %></td>
                 </tr>
                     <% end %>
             <thead>
                 <tr>
-                    <td class="col-md-4"></td>
+                    <td class="col-md-5"></td>
                     <td class="col-md-3"></td>
                     <td class="col-md-1">SUBTOTAL<br><br>GRANDTOTAL</td>
-                    <td class="col-md-4 text-right">product prices sum<br><br>cart total</td>
+                    <td class="col-md-3 text-right">PRODUCT PRICES SUM<br><br>CART TOTAL</td>
                 </tr>
             </thead>
 
