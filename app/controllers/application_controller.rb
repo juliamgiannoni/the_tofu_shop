@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :get_cats
+
+  def get_cats
+    @cats = Category.all
+  end
+
   private
     helper_method :current_customer
 

@@ -21,41 +21,39 @@
   <body>
 
     <nav class="navbar navbar-default navbar-fixed-top navbar-toggler-right"> <!-- top nav bar -->
-    <div class="container-fluid">
-      <div class="navbar-header collapse navbar-collapse navbar-right">
-          <a class="navbar-brand" href="/">THE TOFU SHOP</a>
-          <a href="/customers/new" >
-              <p class="navbar-text collapse navbar-collapse">
-                <% if current_customer %>
-                    Welcome, <%= current_customer.customer_name %>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <%= link_to "LOGOUT", session_path("dummy"), method: :delete %>
-                <% else %>
-                    <%= link_to "REGISTER", register_path %>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <%= link_to "LOGIN", "/login" %>
-                <% end %>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <%= link_to "CART (0)", "#" %>
-            </p>
-          </a>
-      </div>
-    </div>
+        <div class="container-fluid">
+            <div class="navbar-header collapse navbar-collapse navbar-right">
+                <a class="navbar-brand" href="/">THE TOFU SHOP</a>
+                    <a href="/customers/new" >
+                        <p class="navbar-text collapse navbar-collapse">
+                            <% if current_customer %>
+                                Welcome, <%= current_customer.customer_name %>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <%= link_to "LOGOUT", session_path("dummy"), method: :delete %>
+                            <% else %>
+                                <%= link_to "REGISTER", register_path %>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <%= link_to "LOGIN", "/login" %>
+                            <% end %>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <%= link_to "CART (0)", "#" %>
+                        </p>
+                    </a>
+            </div>
+        </div>
     </nav>
 
     <nav class="navbar navbar-default"> <!--  category nav bar -->
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-              <li><a href="/">ACCESSORIES</a></li>&nbsp;&nbsp;
-              <li><a href="/">BEDS</a></li>&nbsp;&nbsp;
-              <li><a href="/">CLOTHING</a></li>&nbsp;&nbsp;
-              <li><a href="/">HOME</a></li>&nbsp;&nbsp;
-              <li><a href="/">MISCELLANEOUS</a></li>&nbsp;&nbsp;
-              <li><a href="/">TOYS</a></li>
-        </ul>
-      </div>
-    </div>
+        <div class="container-fluid">
+            <div class="category-links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><%= link_to "All Products", root_path(cat: "all") %></li>
+                    <% @cats.each do |cat| %>
+                        <li><%= link_to cat.category_name, root_path(cat: cat.id) %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
