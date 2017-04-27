@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <h4>SHOPPING CART</h4>
         <hr>
+        <% if @current_customer.cart.products.exists? %>
         <table class="table">
             <thead>
                 <tr class="table-header">
@@ -22,12 +23,9 @@
                                 $<%= product.product_price %>
                             </div>
                         </td>
-                        <td>
-                            <%= link_to "REMOVE", destroy_path(product), method: :delete %>
-                        </td>
+                        <td><%= link_to "REMOVE" %></td>
                         <td>1</td>
                         <td class="text-right">$<%= product.product_price %></td>
-                </tr>
                     <% end %>
             <thead>
                 <tr>
@@ -39,7 +37,14 @@
             </thead>
             </tbody>
         </table>
-        <div class="actions text-right"><%= submit_tag "CHECKOUT", class: "button" %></div>
+            <%= button_to "CHECKOUT", destroy_path, method: :delete, class: "button" %>
 
+        <% else %>
+            <br>
+            <%= "You currently have no items in your shopping cart." %><br><br><br>
+            <%= link_to "$$$ GIVE US YOUR MONEY $$$", root_path, class: "button" %>
+        <% end %>
 </div>
+
+
 

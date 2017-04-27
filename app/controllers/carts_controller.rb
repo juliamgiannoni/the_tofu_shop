@@ -24,10 +24,9 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    productid = params[:product_id]
-    current_customer.cart.products.find(productid).destroy
+    current_customer.cart.products.destroy_all
     render :show
+    flash[:notice] = "Clean up Tofu's poop."
   end
-
 
 end
