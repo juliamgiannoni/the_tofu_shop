@@ -32,7 +32,7 @@
                     <td class="col-md-5"></td>
                     <td class="col-md-2"></td>
                     <td class="col-md-2">GRAND TOTAL</td>
-                    <td class="col-md-3 text-right">CART TOTAL</td>
+                    <td class="col-md-3 text-right">$<%= @current_customer.cart.products.sum(:product_price) %></td>
                 </tr>
             </thead>
             </tbody>

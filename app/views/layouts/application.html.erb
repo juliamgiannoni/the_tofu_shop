@@ -36,6 +36,8 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                             <% if current_customer %>
                                 <%= link_to "CART (#{current_customer.cart.products.count})", shoppingcart_path %>
+                            <% else %>
+                                <%= link_to "CART", shoppingcart_path %>
                             <% end %>
 
                         </p>
