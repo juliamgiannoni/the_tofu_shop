@@ -1,5 +1,7 @@
 <div class="container-fluid">
     <h4>SHOPPING CART</h4>
+    <div class="text-center"><%= notice %></div>
+
         <hr>
         <% if @current_customer.cart.products.exists? %> <!-- displays products if they have been added to cart -->
         <table class="table">
@@ -23,7 +25,7 @@
                                 $<%= product.product_price %>
                             </div>
                         </td>
-                        <td><%= link_to "REMOVE" %></td>
+                         <td><%= link_to "REMOVE", remove_path(product), method: :delete %></td>
                         <td>1</td>
                         <td class="text-right">$<%= product.product_price %></td>
                 </tr>

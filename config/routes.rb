@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/shoppingcart', to: 'carts#show'
   post '/add/:product_id', to: 'carts#add', as: 'add'
   delete '/purchase', to: 'carts#purchase', as: 'purchase'
+  delete '/remove/:product_id', to: 'carts#remove', as: 'remove'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :customers, only: [:new, :create]
