@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/register', to: 'customers#new'
   get '/shoppingcart', to: 'carts#show'
-  post '/update/:product_id', to: 'carts#update', as: 'update'
-  delete '/destroy', to: 'carts#destroy', as: 'destroy'
+  post '/add/:product_id', to: 'carts#add', as: 'add'
+  delete '/purchase', to: 'carts#purchase', as: 'purchase'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :customers, only: [:new, :create]

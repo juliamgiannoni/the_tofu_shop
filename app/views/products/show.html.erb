@@ -11,6 +11,6 @@
         <%= "Description:" %><br>
     </span>
         <%= @product.product_description %><br><br><br>
-        <%= button_to "ADD TO CART", update_path(product_id: @product.id), method: :post, class: "button" %>
+        <%= button_to "ADD TO CART", add_path(product_id: @product.id), method: :post, class: "button" %>
 </div>
 

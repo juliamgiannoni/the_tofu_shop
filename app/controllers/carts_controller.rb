@@ -18,15 +18,17 @@ class CartsController < ApplicationController
     @products = Product.all
   end
 
-  def update
+  def add
     productid = params[:product_id]
     current_customer.cart.products << Product.find_by(id: productid)
+    redirect_to :back
   end
 
-  def destroy
+
+  def purchase
     current_customer.cart.products.destroy_all
-    render :show
-    flash[:notice] = "Clean up Tofu's poop."
+    redirect_to :back
+    flash[:notice] = "Thank you for your purchase!"
   end
 
 end

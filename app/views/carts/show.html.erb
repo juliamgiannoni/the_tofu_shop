@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h4>SHOPPING CART</h4>
         <hr>
-        <% if @current_customer.cart.products.exists? %>
+        <% if @current_customer.cart.products.exists? %> <!-- displays products if they have been added to cart -->
         <table class="table">
             <thead>
                 <tr class="table-header">
@@ -26,6 +26,7 @@
                         <td><%= link_to "REMOVE" %></td>
                         <td>1</td>
                         <td class="text-right">$<%= product.product_price %></td>
+                </tr>
                     <% end %>
             <thead>
                 <tr>
@@ -37,8 +38,7 @@
             </thead>
             </tbody>
         </table>
-            <%= button_to "CHECKOUT", destroy_path, method: :delete, class: "button" %>
-
+            <div class="text-right"><%= button_to "CHECKOUT", purchase_path, method: :delete, class: "button" %></div>
         <% else %>
             <br>
             <%= "You currently have no items in your shopping cart." %><br><br><br>
