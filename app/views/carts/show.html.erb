@@ -22,7 +22,9 @@
                                 $<%= product.product_price %>
                             </div>
                         </td>
-                        <td><%= link_to "REMOVE", "" %></td>
+                        <td>
+                            <%= link_to "REMOVE", destroy_path(product), method: :delete %>
+                        </td>
                         <td>1</td>
                         <td class="text-right">$<%= product.product_price %></td>
                 </tr>

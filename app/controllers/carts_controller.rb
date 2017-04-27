@@ -25,7 +25,8 @@ class CartsController < ApplicationController
 
   def destroy
     productid = params[:product_id]
-    current_customer.cart.products.find(producid).destroy
+    current_customer.cart.products.find(productid).destroy
+    render :show
   end
 
 
