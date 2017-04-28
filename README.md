@@ -3,6 +3,9 @@
 By Julia Yi
 
 ## Description
+The Tofu Shop is an online shop dedicated to selling various items, such as accessories, home goods, clothing and toys, modeled by [Tofu the Corgi] (http://www.instagram.com/tofu_corgi).
+
+Like any online shop, customers have the ability to create a new account or login with an existing one. Customers must be logged in before they begin adding products to their shopping cart. All products are featured on the home page, with a navigation bar that allows customers to filter products by their category.
 
 ## Technologies Used
 
@@ -23,4 +26,13 @@ By Julia Yi
 * Visit [The Tofu Shop] (https://the-tofu-shop.herokuapp.com/)
 * The Tofu Shop's [Trello] (https://trello.com/b/rJidM0EY/the-tofu-shop)
 
-## Unsolved Problems, etc.
+## Unsolved Problem/Next Steps
+
+In order to improve The Tofu Shop, I would add the following features:
+
+1. The ability to create, read, update and delete reviews (1-5 star rating & text) for each product.
+2. Average star ratings for each product.
+2. A carousel of images when hovering over a product's image on the home page.
+3. The ability to update the quantity of a product in the shopping cart.
+4. The ability to add items to the shopping cart without logging in/registering first.
+5. Items added into a shopping cart before logging/registering to remain even after logging in/registering before checkout.

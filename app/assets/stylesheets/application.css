@@ -88,4 +88,11 @@ a:hover {
   bottom: 0;
   width: 100%;
   text-align: center;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .footer img {
+    width: 100%;
+  }
 }
