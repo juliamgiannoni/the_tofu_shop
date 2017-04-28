@@ -6,8 +6,8 @@ class Customer < ApplicationRecord
   has_one :cart
   has_many :products, through: :cart
 
-
   def set_defaults
     self.cart = Cart.create({cart_total: 0}) if self.cart.nil?
   end
+
 end

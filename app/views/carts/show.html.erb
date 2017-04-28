@@ -3,46 +3,46 @@
     <h4>SHOPPING CART</h4>
         <hr>
         <% if @current_customer.cart.products.exists? %> <!-- displays products if they have been added to cart -->
-        <table class="table">
-            <thead>
-                <tr class="table-header">
-                    <th class="col-md-5">ITEM</th>
-                    <th class="col-md-3">EDIT</th>
-                    <th class="col-md-1">QUANTITY</th>
-                    <th class="col-md-3 text-right">SUBTOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <% @current_customer.cart.line_items.each do |item| %>
-                        <td>
-                            <div class="d-inline-block col-md-4 table-data">
-                                <%= link_to (image_tag item.product.product_image, {height: 110}), product_path(item.product) %>
-                            </div>
-                            <div class="d-inline-block col-md-7 table-data">
-                                <%= link_to item.product.product_name, product_path(item.product) %><br>
-                                $<%= item.product.product_price %>
-                            </div>
-                        </td>
-                         <td><%= link_to "REMOVE", remove_path(item.product), method: :delete %></td>
-                        <td><%= item.quantity %></td>
-                        <td class="text-right">$<%= item.product.product_price * item.quantity %></td>
-                </tr>
-                    <% end %>
-            <thead>
-                <tr>
-                    <td class="col-md-5"></td>
-                    <td class="col-md-2"></td>
-                    <td class="col-md-2">GRAND TOTAL</td>
-                    <% @sum = 0 %>
-                    <% @current_customer.cart.line_items.each do |line| %>
-                        <% @sum += line.quantity * line.product.product_price %>
-                    <% end %>
-                    <td class="col-md-3 text-right">$<%= @sum %></td>
-                </tr>
-            </thead>
-            </tbody>
-        </table>
+            <table class="table">
+                <thead>
+                    <tr class="table-header">
+                        <th class="col-md-5">ITEM</th>
+                        <th class="col-md-3">EDIT</th>
+                        <th class="col-md-1">QUANTITY</th>
+                        <th class="col-md-3 text-right">SUBTOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <% @current_customer.cart.line_items.each do |item| %>
+                            <td>
+                                <div class="d-inline-block col-md-4 table-data">
+                                    <%= link_to (image_tag item.product.product_image, {height: 110}), product_path(item.product) %>
+                                </div>
+                                <div class="d-inline-block col-md-7 table-data">
+                                    <%= link_to item.product.product_name, product_path(item.product) %><br>
+                                    $<%= item.product.product_price %>
+                                </div>
+                            </td>
+                             <td><%= link_to "REMOVE", remove_path(item.product), method: :delete %></td>
+                            <td><%= item.quantity %></td>
+                            <td class="text-right">$<%= item.product.product_price * item.quantity %></td>
+                    </tr>
+                        <% end %>
+                <thead>
+                    <tr>
+                        <td class="col-md-5"></td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-2">GRAND TOTAL</td>
+                        <% @sum = 0 %>
+                        <% @current_customer.cart.line_items.each do |line| %>
+                            <% @sum += line.quantity * line.product.product_price %>
+                        <% end %>
+                        <td class="col-md-3 text-right">$<%= @sum %></td>
+                    </tr>
+                </thead>
+                </tbody>
+            </table>
             <div class="text-right"><%= button_to "CHECKOUT", purchase_path, method: :delete, class: "button" %></div>
         <% else %>
             <br>

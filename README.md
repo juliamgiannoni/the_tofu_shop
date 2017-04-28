@@ -1,24 +1,26 @@
-# README
+# The Tofu Shop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+By Julia Yi
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+## Technologies Used
 
-* System dependencies
+1. HTML
+2. CSS
+3. Ruby
+4. Ruby On Rails
+5. Bootstrap
+6. Google Fonts
+7. Adobe Photoshop
+8. Adobe Illustrator
 
-* Configuration
+## Progress
+![](https://media.giphy.com/media/QyV1SZfgi1qWQ/giphy.gif)
 
-* Database creation
+## Installation/Startup Instructions
 
-* Database initialization
+* Visit [The Tofu Shop] (https://the-tofu-shop.herokuapp.com/)
+* The Tofu Shop's [Trello] (https://trello.com/b/rJidM0EY/the-tofu-shop)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Unsolved Problems, etc.
