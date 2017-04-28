@@ -8,10 +8,11 @@
                     <% for message in @customer.errors.full_messages %>
                     <%= message %>
                     <% end %>
-            </div><br>
+            </div>
+            <br>
         <% end %>
         <div class="field">
-            <%= f.label "Full Name" %><br>
+            <%= f.label "Name" %><br>
             <%= f.text_field :customer_name %><br><br>
         </div>
         <div class="field">

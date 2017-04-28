@@ -20,7 +20,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top navbar-toggler-right"> <!-- top nav bar -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- top nav bar -->
                 <div class="navbar-header navbar-center">
                     <a class="navbar-brand" href="/">THE TOFU SHOP</a>
                 </div>
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav container-fluid">
+                    <ul class="nav navbar-nav">
                         <% if current_customer %>
                            <li>Welcome, <%= current_customer.customer_name %></li>
                            <li><%= link_to "LOGOUT", session_path("dummy"), method: :delete %></li>
@@ -78,7 +78,7 @@
         </div>
 
         <footer class="footer">
-                <%= link_to image_tag("tofu_background.png"), "http://www.instagram.com/tofu_corgi", target: :_blank %>
+            <%= link_to image_tag("tofu_background.png"), "http://www.instagram.com/tofu_corgi", target: :_blank %>
         </footer>
     </body>
 </html>

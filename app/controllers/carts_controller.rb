@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+
   before_action :authorize, only: [:show, :add]
 
   def new

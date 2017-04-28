@@ -24,7 +24,7 @@
                                     $<%= item.product.product_price %>
                                 </div>
                             </td>
-                             <td><%= link_to "REMOVE", remove_path(item.product), method: :delete %></td>
+                            <td><%= link_to "REMOVE", remove_path(item.product), method: :delete %></td>
                             <td><%= item.quantity %></td>
                             <td class="text-right">$<%= item.product.product_price * item.quantity %></td>
                     </tr>

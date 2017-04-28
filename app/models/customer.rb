@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
+
   after_initialize :set_defaults
 
   has_secure_password
