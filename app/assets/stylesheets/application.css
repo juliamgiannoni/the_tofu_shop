@@ -20,9 +20,15 @@ body {
 
 .navbar-brand {
   position: absolute;
-  left: 44%;
+  left: 43%;
   font-size: 25px;
   line-height: 25px;
+}
+
+@media (min-width: 768px) {
+  .navbar-right {
+    margin-right: 0px;
+  }
 }
 
 a {
