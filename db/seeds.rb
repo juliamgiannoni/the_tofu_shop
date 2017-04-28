@@ -1,3 +1,4 @@
+LineItem.destroy_all
 Product.destroy_all
 Category.destroy_all
 
@@ -74,13 +75,13 @@ products = Product.create([{
   product_name: "Purple Hoodie",
   product_price: 20,
   product_image: "clothing_purplehoodie.png",
-  product_description: "Because there's no better way to show off how up-to-date your dog is on the latest athleisure trend than by rocking this purple hoodie. Comes in a sleeveless design to ensure full mobility in their front half.",
+  product_description: "Because there's no better way to show off how up-to-date your dog is on the latest athleisure trend than by rocking this purple hoodie. Comes in a sleeveless design to ensure full mobility of their front half.",
   category: categories[2]
   }, {
   product_name: "Alphabet Letter Blocks",
   product_price: 23,
   product_image: "home_letterblocks.png",
-  product_description: "Your favorite childhood toy just became life-size! Let's hope you actually know how to spell. And contrary to popular belief, these blocks are NOT made out of tofu.",
+  product_description: "Your favorite childhood toy just became life-size! Let's hope you actually know how to spell. And contrary to popular belief, these blocks are not made out of tofu.",
   category: categories[3]
   }, {
   product_name: "Letter Board",
@@ -122,7 +123,7 @@ products = Product.create([{
   product_name: "Pizza Plush Toy",
   product_price: 12,
   product_image: "toys_pizza.png",
-  product_description: "Do you know the difference between this pizza and your opinion? I asked for the pizza. OOOOOOOOOOOOOOOOOOOH YOU BETTER APPLY TO ICE WATER TO THAT BURN.",
+  product_description: "Do you know the difference between this pizza and your opinion? I asked for the pizza.",
   category: categories[5]
   }, {
   product_name: "Blue Rope Toy",
@@ -134,6 +135,6 @@ products = Product.create([{
   product_name: "Unicorgi Plush Toy",
   product_price: 15,
   product_image: "toys_unicorgi.png",
-  product_description: "Hop on the unicorn-everything trend with a unicorgi plush toy that features a blue or purple horn. Or maybe it's a small swirly party hat? The world will never know. Just give us your money.",
+  product_description: "Hop on the unicorn-everything trend with a unicorgi plush toy that features a blue or purple horn. Or maybe it's a small swirly party hat? *shrug emoji*",
   category: categories[5]
   }])
