@@ -1,7 +1,6 @@
 class Customer < ApplicationRecord
 
   after_initialize :set_defaults
-
   has_secure_password
   validates :customer_email, presence: true, uniqueness: true
   has_one :cart

@@ -44,12 +44,9 @@
                 </tbody>
             </table>
             <div class="text-right"><%= button_to "CHECKOUT", purchase_path, method: :delete, class: "button" %></div>
-        <% else %>
+        <% else %> <!-- displays message and button to root path if no products in cart -->
             <br>
             <%= "You currently have no items in your shopping cart." %><br><br><br>
             <%= link_to "$$$ GIVE US YOUR MONEY $$$", root_path, class: "button" %>
         <% end %>
 </div>
-
-
-
