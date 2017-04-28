@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :authorize, only: [:show]
+  before_action :authorize, only: [:show, :add]
 
   def new
     @cart = Cart.new
@@ -19,13 +19,15 @@ class CartsController < ApplicationController
   end
 
   def add
-    if current_customer
-      productid = params[:product_id]
-      current_customer.cart.products << Product.find_by(id: productid)
-      redirect_to :back
+    productid = params[:product_id]
+    line_item = current_customer.cart.line_items.find_by(product_id: productid)
+    if line_item
+      line_item.quantity += 1
+      line_item.save
     else
-      redirect_to login_path, alert: "Please login or register to begin adding items to your cart."
+      LineItem.create(cart: current_customer.cart, product_id: productid, quantity: 1)
     end
+    redirect_to :back
   end
 
   def remove

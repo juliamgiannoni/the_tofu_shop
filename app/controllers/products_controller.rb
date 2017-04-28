@@ -1,6 +1,4 @@
 class ProductsController < ApplicationController
-  # before_action :authorize, except: [:index, :show]
-
   def index
     if params[:cat] == "all" || !params.has_key?(:cat) #shows all products if params id is "cat" or blank
       @products = Product.all

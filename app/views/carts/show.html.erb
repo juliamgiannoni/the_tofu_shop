@@ -1,7 +1,6 @@
 <div class="container-fluid">
-    <h4>SHOPPING CART</h4>
     <div class="text-center"><%= notice %></div>
-
+    <h4>SHOPPING CART</h4>
         <hr>
         <% if @current_customer.cart.products.exists? %> <!-- displays products if they have been added to cart -->
         <table class="table">
@@ -15,19 +14,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <% @current_customer.cart.products.each do |product| %>
+                    <% @current_customer.cart.line_items.each do |item| %>
                         <td>
                             <div class="d-inline-block col-md-4 table-data">
-                                <%= link_to (image_tag product.product_image, {height: 110}), product_path(product) %>
+                                <%= link_to (image_tag item.product.product_image, {height: 110}), product_path(item.product) %>
                             </div>
                             <div class="d-inline-block col-md-7 table-data">
-                                <%= link_to product.product_name, product_path(product) %><br>
-                                $<%= product.product_price %>
+                                <%= link_to item.product.product_name, product_path(item.product) %><br>
+                                $<%= item.product.product_price %>
                             </div>
                         </td>
-                         <td><%= link_to "REMOVE", remove_path(product), method: :delete %></td>
-                        <td>1</td>
-                        <td class="text-right">$<%= product.product_price %></td>
+                         <td><%= link_to "REMOVE", remove_path(item.product), method: :delete %></td>
+                        <td><%= item.quantity %></td>
+                        <td class="text-right">$<%= item.product.product_price * item.quantity %></td>
                 </tr>
                     <% end %>
             <thead>
@@ -35,7 +34,11 @@
                     <td class="col-md-5"></td>
                     <td class="col-md-2"></td>
                     <td class="col-md-2">GRAND TOTAL</td>
-                    <td class="col-md-3 text-right">$<%= @current_customer.cart.products.sum(:product_price) %></td>
+                    <% @sum = 0 %>
+                    <% @current_customer.cart.line_items.each do |line| %>
+                        <% @sum += line.quantity * line.product.product_price %>
+                    <% end %>
+                    <td class="col-md-3 text-right">$<%= @sum %></td>
                 </tr>
             </thead>
             </tbody>
